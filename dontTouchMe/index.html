@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Don't touch me</title>
+    <link rel="stylesheet" href="work.css" />
+  </head>
+  <body>
+    <audio id="myAudio" autoplay loop>
+      <source src="hub-troll-loud.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <button id="playButton" style="display: none"></button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var audio = document.getElementById("myAudio");
+        var playButton = document.getElementById("playButton");
+
+        // Ovozni 100% qilish
+        audio.volume = 1.0;
+
+        // Sayt ochilganda avtomatik ravishda ovozni boshlash
+        audio.play();
+
+        // Tugmani avtomatik ravishda bosish
+        document.addEventListener("click", function () {
+          playButton.click();
+        });
+
+        // Tugmani bosganda ovozni boshlash yoki to'xtatish
+        playButton.addEventListener("click", function () {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
