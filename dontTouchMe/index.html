@@ -31,6 +31,14 @@
         document.addEventListener("click", function () {
           playButton.click();
         });
+        
+     playButton.addEventListener("click", function () {
+          if (audio.play) {
+            audio.play();
+          } else {
+            audio.play();
+          }
+        });
       });
     </script>
   </body>
